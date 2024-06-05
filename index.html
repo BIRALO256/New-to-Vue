@@ -18,6 +18,28 @@
           text-align: center;
           line-height: 100px; /* Centers text vertically */
         }
+        body{
+            background: gainsboro;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+        p,h3,ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            list-style-type: none;
+            background: yellowgreen;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+        }
+ 
+        li.biralo{
+            background: red;
+            color: white;
+        }
+
       </style>
 
   </head>
@@ -38,6 +60,14 @@
     
         <button @click ="toggleShowBooks" >
             <span v-if="showBooks" >Hide Books</span>
+                
+            <ul>
+                <li v-for="jovic in books" :class="{ biralo: books.isFav} @click='changecolor(jovic)' " >
+                    <h3>{{jovic.title}}</h3>
+                    <p>{{jovic.author}}</p>
+                </li>
+            </ul>
+
             <span v-if="!showBooks">show Books</span>
         </button>
 

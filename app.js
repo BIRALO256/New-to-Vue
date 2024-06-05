@@ -13,6 +13,11 @@ const app = Vue.createApp({
             age: '34',
             x:0,
             y:0,
+            books: [
+                {title: ' the wire ',author: 'patric jovic', isFav: true},
+                {title: 'viking ',author: 'ragina', isFav: false},
+                {title: 'game of throns',author: 'micheal', isFav: true},
+            ]
         }
     },
 
@@ -22,6 +27,10 @@ const app = Vue.createApp({
         },
         toggleShowBooks(){
             this.showBooks = !this.showBooks
+        },
+
+        changecolor(jovic){
+            this.jovic.isFav =!this.jovic.isFav
         },
 
         // handlevent(){

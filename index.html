@@ -4,10 +4,56 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>New to vue</title>
   
+    <style>
+        .box {
+          display: inline-block;
+          width: 200px;
+          height: 100px;
+          margin: 10px;
+          background-color: #f0f0f0;
+          border: 1px solid #ccc;
+          text-align: center;
+          line-height: 100px; /* Centers text vertically */
+        }
+      </style>
+
   </head>
   <body>
-   
+    
+   <h1>Hello view</h1>
+
+  <div id="app">
+    <div v-if="showBooks">
+
+        <h2>{{title}} , {{age}}</h2>
+
+        <button v-on:click="age++" >age +</button>
+        <button v-on:click="age--" >age -</button>
+        <button @click="changeTitle('muwanguzi')" > title change</button>
+
+    </div>
+    
+        <button @click ="toggleShowBooks" >
+            <span v-if="showBooks" >Hide Books</span>
+            <span v-if="!showBooks">show Books</span>
+        </button>
+
+       <div v-show="showbooks" >currently showiing  books</div>
+
+     <br>
+     <!--mouse evets-->
+     
+     <div  class="box" @mouseover = "handlevent"> mouse over (enter)</div>
+     <div  class="box" @mouseleave =" handleventLeave" >mouse leave</div>
+     <div  class="box" @dblclick="handleventLeave" >double clcik</div>
+     <div  class="box" @mousemove="handleMousemove" >Position - {{x}}  {{y}}</div>
+
+  </div>
+
+
+   <script src="app.js"></script>
   </body>
 </html>
